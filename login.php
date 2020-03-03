@@ -15,7 +15,7 @@ if(isset($_SESSION['username'])){
 </head>
 <body>
 
-<div class='container'>
+<div class='container' style='margin-top: 100px;'>
 	<!-- Navigation bar -->
 		<?php include('includes/nav.include.php'); ?>
 

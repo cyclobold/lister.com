@@ -51,4 +51,5 @@ if(isset($_SESSION['username'])){
 </body>
 <script src='thirdparties/jquery.js'></script>
 <?php include('includes/scripts.include.php');?>
+<script src='js/19-12.js'></script>
 </html>
