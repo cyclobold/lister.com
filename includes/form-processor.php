@@ -30,6 +30,11 @@ if(isset($_POST['register'])){
 
 			echo "<div class='alert alert-success' style='margin-top: 10px;'>User registered. You can now <a href='login.php' class='btn btn-sm btn-success'>sign in</a></div>";
 
+
+			//Sends an email to this user ..
+
+			send_email_to_user($firstname, $lastname);
+
 		}else{
 
 			echo "Could not register user: ".mysqli_error($conn);
