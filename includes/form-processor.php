@@ -73,7 +73,7 @@ if(isset($_POST['login'])){
 		$password = mysqli_real_escape_string($conn, trim($password));
 
 
-		$query = "SELECT id, firstname, lastname, username, date_created FROM flm_users WHERE username='$username' AND password= md5('$password') LIMIT 1";
+		$query = "SELECT id, firstname, lastname, username, date_created, user_type FROM flm_users WHERE username='$username' AND password= md5('$password') LIMIT 1";
 
 		$query_result = mysqli_query($conn, $query);
 
@@ -84,9 +84,22 @@ if(isset($_POST['login'])){
 				session_start();
 				$_SESSION = mysqli_fetch_array($query_result, MYSQLI_ASSOC);
 
-
-				//redirect the user
+				
+				if($_SESSION['user_type'] == 1){
+					//this is the normal user
+					//redirect the user
 					header('location: user.php');
+				}elseif($_SESSION['user_type'] == 2){
+					//this is the admin user
+					//this is the normal user
+					//redirect the user
+					header('location: admin.php');
+				}
+
+
+
+
+			
 
 
 			}else{

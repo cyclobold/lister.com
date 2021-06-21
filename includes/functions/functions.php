@@ -5,6 +5,49 @@ function register_user(){
 
 }
 
+function get_all_roles(){
+	require('./includes/connection.php');
+
+	$query = "SELECT * FROM user_types";
+
+	$result = mysqli_query($conn, $query);
+
+	if($result){
+		//the query ran
+		
+		echo "<table class='table'>
+				<thead>
+					<tr>
+						<th>Role</th>
+						<th>Description</th>
+						<th>Manage</th>
+					</tr>
+				</thead>
+				<tbody>
+				";
+		while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+
+				$role_id = $row['id'];
+				$role_type = $row['type_name'];
+
+
+				echo "<tr>
+						<td>{$role_id}</td>
+						<td>{$role_type}</td>
+						<td>::</td>
+					</tr>";
+
+
+		}
+		echo "</tbody></table>";
+
+	}else{
+		// the query did not run
+	}
+
+
+}
+
 
 
 
