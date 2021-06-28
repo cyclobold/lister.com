@@ -36,7 +36,7 @@ require "includes/functions/functions.php";
 					<div>
 					<strong>Welcome <?php echo "{$_SESSION['firstname']}!"; ?> </strong>
 					<div id='update_id'>
-					<a href='posts.php' class='btn btn-sm btn-primary'> My Posts</a>
+					<a href='posts.php' class='btn btn-sm btn-primary'>Create Role</a>
 					<a href='logout.php' class='btn btn-sm btn-primary'> Log out</a>
 					</div>
 					</div>

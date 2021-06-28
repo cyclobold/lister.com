@@ -34,7 +34,7 @@ function get_all_roles(){
 				echo "<tr>
 						<td>{$role_id}</td>
 						<td>{$role_type}</td>
-						<td>::</td>
+						<td><a href='manage_role.php?rid={$role_id}' class='btn btn-sm btn-warning'>Add/Remove Privileges</a></td>
 					</tr>";
 
 
@@ -411,4 +411,51 @@ function check_if_post_is_liked_by_others($post_id){
 
 }
 
+
+function get_role($role_id){
+	require("./includes/connection.php");
+
+
+
+	$get_role_query = "SELECT * FROM `user_types` WHERE `id`=$role_id LIMIT 1";
+
+	$get_role_result = mysqli_query($conn, $get_role_query);
+
+	if(mysqli_num_rows($get_role_result) == 1){
+		//there is match
+		return mysqli_fetch_array($get_role_result, MYSQLI_ASSOC);
+	}
+
+
+	return false;
+
+	
+
+}
+
+function get_privileges(){
+	require("includes/connection.php");
+
+
+
+	$get_privileges_query = "SELECT * FROM `users_privileges`";
+
+	$get_privileges_result = mysqli_query($conn, $get_privileges_query);
+
+	if(!$get_privileges_result){
+		echo mysqli_error($conn);
+	}
+
+	//there is match
+	$privileges = [];
+	while($rows = mysqli_fetch_array($get_privileges_result, MYSQLI_ASSOC)){
+		$privileges[$rows['users_privilege']] = $rows;
+	}
+
+	return $privileges;
+
+
+	
+
+}
 
