@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2021 at 03:24 PM
+-- Generation Time: Jul 01, 2021 at 10:44 AM
 -- Server version: 10.5.9-MariaDB
 -- PHP Version: 8.0.6
 
@@ -162,6 +162,33 @@ INSERT INTO `posts_likes` (`like_id`, `post_id`, `like_author_id`, `date_created
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `users_privileges`
+--
+
+CREATE TABLE `users_privileges` (
+  `id` int(11) NOT NULL,
+  `users_privilege` varchar(32) NOT NULL,
+  `category_name` varchar(32) NOT NULL,
+  `allowed_roles` longtext DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users_privileges`
+--
+
+INSERT INTO `users_privileges` (`id`, `users_privilege`, `category_name`, `allowed_roles`, `created_at`, `updated_at`) VALUES
+(1, 'can_create_user', 'user', '[2]', '2021-06-28 14:35:33', '2021-06-28 14:35:33'),
+(2, 'can_update_user', 'user', '[2]', '2021-06-28 14:35:33', '2021-06-28 14:35:33'),
+(3, 'can_delete_user', 'user', '[2]', '2021-06-28 14:35:33', '2021-06-28 14:35:33'),
+(4, 'can_create_blog', 'blog', '[1,2]', '2021-06-28 14:35:33', '2021-06-28 14:35:33'),
+(5, 'can_delete_blog', 'blog', '[2]', '2021-06-28 14:36:32', '2021-06-28 14:36:32'),
+(6, 'can_update_blog', 'blog', '[1,2]', '2021-06-28 15:14:36', '2021-06-28 15:14:36');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_types`
 --
 
@@ -215,6 +242,12 @@ ALTER TABLE `posts_likes`
   ADD PRIMARY KEY (`like_id`);
 
 --
+-- Indexes for table `users_privileges`
+--
+ALTER TABLE `users_privileges`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user_types`
 --
 ALTER TABLE `user_types`
@@ -253,6 +286,12 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `posts_likes`
   MODIFY `like_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+
+--
+-- AUTO_INCREMENT for table `users_privileges`
+--
+ALTER TABLE `users_privileges`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user_types`
