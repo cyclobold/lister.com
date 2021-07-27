@@ -1,4 +1,7 @@
-<?php 
+<?php include("includes/head.inc.php"); ?>
+<body>
+
+	<?php 
 session_start();
 
 if(isset($_SESSION['username'])){
@@ -17,3 +20,9 @@ echo
 }else{
 	header('location: login.php');
 }
+?>
+	
+</body>
+</html>
+
+

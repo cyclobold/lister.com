@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Lister App</title>
-	<link rel='stylesheet' href='thirdparties/bootstrap/css/bootstrap.min.css'>
-	<link rel='stylesheet' href='css/style.css'>
-</head>
+<?php include("includes/head.inc.php"); ?>
 <body>
 	<style>
 		body{
@@ -43,14 +37,14 @@
 					
 
 
-
+					<div id='main_content'>
 					<?php 
 						require('includes/functions/functions.php');
 
 						get_all_posts();
 
 					?>
-				
+					</div>
 			</div>
 
 		</div>

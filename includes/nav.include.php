@@ -25,12 +25,12 @@
 				
 			</ul>
 
-			<form action='search_result.php' method='GET' class='form' id='search_form'>
+			<form method='GET' class='form' id='search_form'>
 				<div class='form-inline'>
 				<input type='text' name='item' id='search_field_id' placeholder="Enter firstname or lastname or username" class='form-control'>
-				<button type='submit' name='search' class='btn btn-md btn-primary'>
+				<!--<button type='submit' name='search' class='btn btn-md btn-primary'>
 					<i class="glyphicon glyphicon-search"></i>
-				</button>
+				</button>-->
 			</div>
 			</form>
 

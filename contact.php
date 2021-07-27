@@ -1,4 +1,4 @@
-<?php include("includes/head.php"); ?>
+<?php include("includes/head.inc.php"); ?>
 <body>
 
 <h3> Welcome to Contact  | <?php include_once('includes/menu.php'); ?></h3>

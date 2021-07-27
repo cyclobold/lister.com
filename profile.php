@@ -6,13 +6,7 @@ if(!isset($_SESSION['username'])){
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Lister App</title>
-	<link rel='stylesheet' href='thirdparties/bootstrap/css/bootstrap.min.css'>
-	<link rel='stylesheet' href='css/style.css'>
-</head>
+<?php include("includes/head.inc.php"); ?>
 <body>
 	<style>
 		body{
